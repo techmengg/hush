@@ -35,8 +35,8 @@ Hush utilizes a modern set of technologies to deliver a smooth and efficient dev
   <img src="https://github.com/user-attachments/assets/91c6ac5f-a1f1-4714-9e54-a22a943b80b6" alt="Bids" width="50%">
   <img src="https://github.com/user-attachments/assets/32a6d517-9292-4097-a133-2fe7be4672ba" alt="Post" width="50%">
 </p>
----
 
+---
 # Local Development Setup
 Follow the steps below to set up the project on your local machine for development:
 
