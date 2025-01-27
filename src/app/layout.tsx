@@ -12,7 +12,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Hush - A silent auction platform",
+  title: "Hush",
 };
 
 export default function RootLayout({

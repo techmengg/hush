@@ -72,7 +72,7 @@ export default async function ItemPage({
             width={400}
             height={400}
           />
-          <div className="text-xl space-y-4">
+          <div className="text-xl space-y-4 text-foreground">
             <div>
               Current Bid{" "}
               <span className="font-bold">
@@ -110,7 +110,7 @@ export default async function ItemPage({
               {allBids.map((bid) => (
                 <li
                   key={bid.id}
-                  className="bg-gray-100 rounded-xl p-8"
+                  className="bg-card text-foreground rounded-xl p-8 border border-border"
                 >
                   <div className="flex gap-4">
                     <div>

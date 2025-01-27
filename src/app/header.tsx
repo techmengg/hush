@@ -28,14 +28,8 @@ export function Header() {
             href="/"
             className="hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            <Image
-              src="/logo.jpg"
-              width="50"
-              height="50"
-              alt="Logo"
-              className="rounded-full"
-            />
-            <span className="text-white text-xl font-semibold">Hush</span>
+
+            <span className="text-white text-xl font-semibold">Hush!</span>
           </Link>
 
           <div className="flex items-center gap-8">
