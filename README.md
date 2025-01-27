@@ -93,7 +93,14 @@ Follow the steps below to set up the project on your local machine for developme
      ```
 
 ---
-
 ### Troubleshooting
 
 - If you encounter any issues during the setup, feel free to message me. Alternatively, you can try to debug the problem by referring to the error messages, and if needed, ask GPT or other resources for solutions.
+
+---
+### Resources & Documentations
+- https://orm.drizzle.team/
+- https://authjs.dev/
+- https://ui.shadcn.com/
+- https://docs.knock.app/
+- https://react.dev/
