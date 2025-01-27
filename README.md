@@ -85,7 +85,7 @@ Follow the steps below to set up the project on your local machine for developme
      ```
    - (This step might not always be necessary, but it's good to run it if you're unsure.)
 6. **Fix missing npm dependencies**:
-   - If you see any npm dependencies underlined with red squiggly lines, manually install them. If you're not sure which packages are missing, feel free to ask me or consult ChatGPT for help.
+   - If you see any npm dependencies underlined with red squiggly lines, manually install them. If you're not sure which packages are missing, feel free to ask me.
 7. **Start the development server**:
    - Run the following command to start the development server:
      ```bash
@@ -96,4 +96,4 @@ Follow the steps below to set up the project on your local machine for developme
 
 ### Troubleshooting
 
-- If you encounter any issues during the setup, feel free to message me. Alternatively, you can try to debug the problem by referring to the error messages, and if needed, consult GPT or other resources for solutions.
+- If you encounter any issues during the setup, feel free to message me. Alternatively, you can try to debug the problem by referring to the error messages, and if needed, ask GPT or other resources for solutions.
