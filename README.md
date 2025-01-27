@@ -1,3 +1,34 @@
+## Hush 🏛️s
+Hush is a web application developed using React, Next.js, and TypeScript, featuring a modern, dark-themed user interface styled with Tailwind CSS and ShadCN components. It employs Drizzle ORM for seamless PostgreSQL database interactions and integrates Auth.js for secure authentication. Real-time notifications are managed through Knock, while Cloudflare handles image hosting. The application is containerized using Docker for consistent deployment across environments.
+
+## Tech Stack
+
+Hush utilizes a modern set of technologies to deliver a smooth and efficient development experience. Below are the main tools and frameworks used:
+
+### Frontend:
+- **React**: A popular JavaScript library for building user interfaces.
+- **Next.js**: A React framework for building static and server-rendered applications with easy routing and server-side rendering.
+- **Tailwind CSS**: A utility-first CSS framework for fast, responsive, and modern design.
+- **ShadCN**: A UI component library to help you build accessible and customizable user interfaces quickly.
+- **TypeScript**: A superset of JavaScript that adds static types, improving code quality and maintainability.
+
+### Backend & Database:
+- **Node.js**: A runtime for executing JavaScript code server-side.
+- **PostgreSQL**: A powerful, open-source relational database for storing structured data.
+- **Drizzle ORM**: A lightweight ORM for interacting with the PostgreSQL database in a type-safe manner.
+
+### Authentication & Notifications:
+- **Auth.js**: A modern authentication library that integrates with various identity providers to handle authentication seamlessly.
+- **Knock**: A real-time notification service for sending notifications to users.
+
+### Hosting & Storage:
+- **Cloudflare**: A global CDN and security service, also used here for hosting images, providing fast access and security.
+
+### Containerization:
+- **Docker**: A platform for developing, shipping, and running applications in containers, ensuring consistency across environments.
+
+---
+
 # Local Development Setup
 Follow the steps below to set up the project on your local machine for development:
 
