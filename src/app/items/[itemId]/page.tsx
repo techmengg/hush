@@ -52,8 +52,9 @@ export default async function ItemPage({
     session && item.userId !== session.user.id && !isBidOver(item);
 
   return (
-    <main className="space-y-8">
+    <main className="space-y-8 p-8">
       <div className="flex gap-8">
+        {/* Left Section: Item Details */}
         <div className="flex flex-col gap-6">
           <h1 className={pageTitleStyles}>
             <span className="font-normal">Auction for</span> {item.name}
@@ -93,6 +94,7 @@ export default async function ItemPage({
           </div>
         </div>
 
+        {/* Right Section: Current Bids */}
         <div className="space-y-4 flex-1">
           <div className="flex justify-between">
             <h2 className="text-2xl font-bold">Current Bids</h2>
@@ -106,13 +108,16 @@ export default async function ItemPage({
           {hasBids ? (
             <ul className="space-y-4">
               {allBids.map((bid) => (
-                <li key={bid.id} className="bg-gray-100 rounded-xl p-8">
+                <li
+                  key={bid.id}
+                  className="bg-gray-100 rounded-xl p-8"
+                >
                   <div className="flex gap-4">
                     <div>
                       <span className="font-bold">
                         ${formatToDollar(bid.amount)}
-                      </span>{" "}
-                      by <span className="font-bold">{bid.user.name}</span>
+                      </span> by{" "}
+                      <span className="font-bold">{bid.user.name}</span>
                     </div>
                     <div className="">{formatTimestamp(bid.timestamp)}</div>
                   </div>
@@ -120,7 +125,7 @@ export default async function ItemPage({
               ))}
             </ul>
           ) : (
-            <div className="flex flex-col items-center gap-8 bg-gray-100 rounded-xl p-12">
+            <div className="flex flex-col items-center gap-8 bg-card text-foreground rounded-xl p-12 border border-border">
               <Image
                 src="/package.svg"
                 width="200"

@@ -24,13 +24,25 @@ export function Header() {
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Left Section: Logo and Navigation Links */}
         <div className="flex items-center gap-12">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center gap-2">
-            <Image src="/logo.jpg" width="50" height="50" alt="Logo" className="rounded-full" />
+          <Link
+            href="/"
+            className="hover:opacity-80 transition-opacity flex items-center gap-2"
+          >
+            <Image
+              src="/logo.jpg"
+              width="50"
+              height="50"
+              alt="Logo"
+              className="rounded-full"
+            />
             <span className="text-white text-xl font-semibold">Hush</span>
           </Link>
 
           <div className="flex items-center gap-8">
-            <Link href="/" className="text-white hover:text-gray-300 transition-colors text-lg">
+            <Link
+              href="/"
+              className="text-white hover:text-gray-300 transition-colors text-lg"
+            >
               Overview
             </Link>
 
@@ -58,32 +70,39 @@ export function Header() {
         <div className="flex items-center gap-6">
           {userId && (
             <>
-              <NotificationIconButton
-                ref={notifButtonRef}
-                onClick={(e) => setIsVisible(!isVisible)}
-              />
-              <NotificationFeedPopover
-                buttonRef={notifButtonRef}
-                isVisible={isVisible}
-                onClose={() => setIsVisible(false)}
-                renderItem={({ item, ...props }) => (
-                  <NotificationCell {...props} item={item}>
-                    <div className="rounded-xl">
-                      <Link
-                        className="text-blue-400 hover:text-blue-500 transition-colors"
-                        onClick={() => {
-                          setIsVisible(false);
-                        }}
-                        href={item.data ? `/items/${item.data.itemId}` : "#"}
-                      >
-                        Someone outbidded you on{" "}
-                        <span className="font-bold">{item.data?.itemName}</span>{" "}
-                        by ${formatToDollar(item.data?.bidAmount ?? 0)}
-                      </Link>
-                    </div>
-                  </NotificationCell>
-                )}
-              />
+              {/* Notification Icon Button */}
+              <div className="relative z-50">
+                <NotificationIconButton
+                  ref={notifButtonRef}
+                  onClick={(e) => setIsVisible(!isVisible)}
+                />
+              </div>
+
+              {/* Notification Feed Popover */}
+              <div className="fixed top-16 right-4 z-50ss0">
+                <NotificationFeedPopover
+                  buttonRef={notifButtonRef}
+                  isVisible={isVisible}
+                  onClose={() => setIsVisible(false)}
+                  renderItem={({ item, ...props }) => (
+                    <NotificationCell {...props} item={item}>
+                      <div className="rounded-xl">
+                        <Link
+                          className="text-blue-400 hover:text-blue-500 transition-colors"
+                          onClick={() => {
+                            setIsVisible(false);
+                          }}
+                          href={item.data ? `/items/${item.data.itemId}` : "#"}
+                        >
+                          Someone outbidded you on{" "}
+                          <span className="font-bold">{item.data?.itemName}</span>{" "}
+                          by ${formatToDollar(item.data?.bidAmount ?? 0)}
+                        </Link>
+                      </div>
+                    </NotificationCell>
+                  )}
+                />
+              </div>
             </>
           )}
 
