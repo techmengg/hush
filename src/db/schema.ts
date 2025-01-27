@@ -9,7 +9,7 @@ import {
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "next-auth/adapters";
 
-export const users = pgTable("bb_user", {
+export const users = pgTable("hush_user", {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
@@ -20,7 +20,7 @@ export const users = pgTable("bb_user", {
 });
 
 export const accounts = pgTable(
-  "bb_account",
+  "hush_account",
   {
     userId: text("userId")
       .notNull()
@@ -43,7 +43,7 @@ export const accounts = pgTable(
   })
 );
 
-export const sessions = pgTable("bb_session", {
+export const sessions = pgTable("hush_session", {
   sessionToken: text("sessionToken").primaryKey(),
   userId: text("userId")
     .notNull()
@@ -52,7 +52,7 @@ export const sessions = pgTable("bb_session", {
 });
 
 export const verificationTokens = pgTable(
-  "bb_verificationToken",
+  "hush_verificationToken",
   {
     identifier: text("identifier").notNull(),
     token: text("token").notNull(),
@@ -63,7 +63,7 @@ export const verificationTokens = pgTable(
   })
 );
 
-export const items = pgTable("bb_item", {
+export const items = pgTable("hush_item", {
   id: serial("id").primaryKey(),
   userId: text("userId")
     .notNull()
@@ -76,7 +76,7 @@ export const items = pgTable("bb_item", {
   endDate: timestamp("endDate", { mode: "date" }).notNull(),
 });
 
-export const bids = pgTable("bb_bids", {
+export const bids = pgTable("hush_bids", {
   id: serial("id").primaryKey(),
   amount: integer("amount").notNull(),
   itemId: serial("itemId")

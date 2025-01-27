@@ -20,31 +20,32 @@ export function Header() {
   const userId = session?.data?.user?.id;
 
   return (
-    <div className="bg-gray-200 py-2">
-      <div className="container flex justify-between items-center">
+    <div className="bg-black/50 py-4 backdrop-blur-sm">
+      <div className="container mx-auto flex justify-between items-center px-6">
+        {/* Left Section: Logo and Navigation Links */}
         <div className="flex items-center gap-12">
-          <Link href="/" className="hover:underline flex items-center gap-1">
-            <Image src="/logo.png" width="50" height="50" alt="Logo" />
-            BidBuddy.com
+          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center gap-2">
+            <Image src="/logo.jpg" width="50" height="50" alt="Logo" className="rounded-full" />
+            <span className="text-white text-xl font-semibold">Hush</span>
           </Link>
 
           <div className="flex items-center gap-8">
-            <Link href="/" className="hover:underline flex items-center gap-1">
-              All Auctions
+            <Link href="/" className="text-white hover:text-gray-300 transition-colors text-lg">
+              Overview
             </Link>
 
             {userId && (
               <>
                 <Link
                   href="/items/create"
-                  className="hover:underline flex items-center gap-1"
+                  className="text-white hover:text-gray-300 transition-colors text-lg"
                 >
-                  Create Auction
+                  List Items
                 </Link>
 
                 <Link
                   href="/auctions"
-                  className="hover:underline flex items-center gap-1"
+                  className="text-white hover:text-gray-300 transition-colors text-lg"
                 >
                   My Auctions
                 </Link>
@@ -52,7 +53,9 @@ export function Header() {
             )}
           </div>
         </div>
-        <div className="flex items-center gap-4">
+
+        {/* Right Section: Notifications, User Avatar, and Sign In/Out */}
+        <div className="flex items-center gap-6">
           {userId && (
             <>
               <NotificationIconButton
@@ -67,15 +70,15 @@ export function Header() {
                   <NotificationCell {...props} item={item}>
                     <div className="rounded-xl">
                       <Link
-                        className="text-blue-400 hover:text=blue-500"
+                        className="text-blue-400 hover:text-blue-500 transition-colors"
                         onClick={() => {
                           setIsVisible(false);
                         }}
-                        href={`/items/${item.data.itemId}`}
+                        href={item.data ? `/items/${item.data.itemId}` : "#"}
                       >
                         Someone outbidded you on{" "}
-                        <span className="font-bold">{item.data.itemName}</span>{" "}
-                        by ${formatToDollar(item.data.bidAmount)}
+                        <span className="font-bold">{item.data?.itemName}</span>{" "}
+                        by ${formatToDollar(item.data?.bidAmount ?? 0)}
                       </Link>
                     </div>
                   </NotificationCell>
@@ -90,10 +93,12 @@ export function Header() {
               width="40"
               height="40"
               alt="user avatar"
-              className="rounded-full"
+              className="rounded-full hover:opacity-80 transition-opacity"
             />
           )}
-          <div>{session?.data?.user?.name}</div>
+
+          <div className="text-white text-lg">{session?.data?.user?.name}</div>
+
           <div>
             {userId ? (
               <Button
@@ -102,11 +107,16 @@ export function Header() {
                     callbackUrl: "/",
                   })
                 }
+                className="bg-white text-black hover:bg-gray-200 transition-colors"
               >
                 Sign Out
               </Button>
             ) : (
-              <Button type="submit" onClick={() => signIn()}>
+              <Button
+                type="submit"
+                onClick={() => signIn()}
+                className="bg-white text-black hover:bg-gray-200 transition-colors"
+              >
                 Sign In
               </Button>
             )}

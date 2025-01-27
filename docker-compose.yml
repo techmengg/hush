@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-  bid-buddy-db:
+  hush-db:
     image: postgres
     restart: always
-    container_name: bid-buddy-db
+    container_name: hush-db
     ports:
       - 5432:5432
     environment:
