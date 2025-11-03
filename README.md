@@ -18,6 +18,9 @@
 ---
 Hush is a web application developed using React, Next.js, and TypeScript, featuring a modern, dark-themed user interface styled with Tailwind CSS and ShadCN components. It employs Drizzle ORM for seamless PostgreSQL database interactions and integrates Auth.js for secure authentication. Real-time notifications are managed through Knock, while Cloudflare handles image hosting. The application is containerized using Docker for consistent deployment across environments.
 
+  <img src="https://github.com/user-attachments/assets/a9d677c8-b5b7-4ccd-97f8-6b522d0bf8f9" alt="Home" width="41%">
+
+
 ## Tech Stack
 
 Hush utilizes a modern set of technologies to deliver a smooth and efficient development experience. Below are the main tools and frameworks used:
@@ -47,7 +50,6 @@ Hush utilizes a modern set of technologies to deliver a smooth and efficient dev
 ---
 # Preview
 
-  <img src="https://github.com/user-attachments/assets/a9d677c8-b5b7-4ccd-97f8-6b522d0bf8f9" alt="Home" width="41%">
   <img src="https://github.com/user-attachments/assets/91c6ac5f-a1f1-4714-9e54-a22a943b80b6" alt="Bids" width="50%">
   <img src="https://github.com/user-attachments/assets/32a6d517-9292-4097-a133-2fe7be4672ba" alt="Post" width="50%">
 
